@@ -1,3 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  .card-background {
+    @apply max-w-xs rounded-3xl overflow-hidden shadow-md bg-gradient-to-b from-gray-700 to-gray-800;
+  }
+  .user-label {
+    @apply font-medium text-gray-500 text-sm mt-2;
+  }
+  .user-name {
+    @apply font-bold text-gray-100 text-2xl mb-8;
+  }
+  .break-line {
+    @apply border-b-2 border-gray-600 mb-8;
+  }
+  .ul-list {
+    @apply text-sm flex space-x-9;
+  }
+  .li-list {
+    @apply flex items-center;
+  }
+  .image-views {
+    @apply font-normal ml-1.5;
+  }
+  .image-likes {
+    @apply font-normal ml-1.5;
+  }
+  .tag-element {
+    @apply inline-block bg-gradient-to-r from-purple-400 to-purple-500 rounded-full px-3 py-1 text-sm font-medium text-white mr-2 m-1;
+  }
+  .display-title {
+    @apply text-gray-700 text-opacity-50 text-10xl font-bold -my-10 ml-56 px-100 text-right min-w-max z-50 overflow-visible;
+  }
+  .heading-title {
+    @apply text-white flex justify-center text-8xl font-bold text-center opacity-1 -mt-;
+  }
+  .gradient-background {
+    @apply linear-gradient flex justify-center h-24 min-w-min mb-4 px-1;
+  }
+  .container-grid {
+    @apply mt-24 mb-20 grid grid-cols-3 gap-4;
+  }
+  .search-form {
+    @apply col-start-2 ml-8 border-4 border-gray-600 rounded-full hover:border-gray-500 hover:bg-gray-800;
+  }
+}

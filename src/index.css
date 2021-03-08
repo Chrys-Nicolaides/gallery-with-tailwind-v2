@@ -31,13 +31,13 @@
     @apply inline-block bg-gradient-to-r from-purple-400 to-purple-500 rounded-full px-3 py-1 text-sm font-medium text-white mr-2 m-1;
   }
   .display-title {
-    @apply text-gray-700 text-opacity-50 text-10xl font-bold -my-10 ml-56 px-100 text-right min-w-max z-50 overflow-visible;
+    @apply text-gray-700 text-opacity-50 text-10xl font-bold -my-10 ml-44 text-right min-w-max z-50 overflow-visible;
   }
   .heading-title {
-    @apply text-white flex justify-center text-8xl font-bold text-center opacity-1 -mt-;
+    @apply text-white flex justify-center text-8xl font-bold text-center opacity-100 -mt-1;
   }
   .gradient-background {
-    @apply linear-gradient flex justify-center h-24 min-w-min mb-4 px-1;
+    @apply flex justify-center h-24 min-w-min mb-4 px-1;
   }
   .container-grid {
     @apply mt-24 mb-20 grid grid-cols-3 gap-4;

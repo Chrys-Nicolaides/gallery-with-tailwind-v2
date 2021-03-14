@@ -28,8 +28,34 @@ function App() {
 
   return (
     <div className="App">
-      <ImageSearch setSearchText={setSearchString} />
-      {loading ? "" : data.hits.map((item) => <ImageCard item={item} />)}
+      <div className="bg-gradient-to-br from-gray-800 to-gray-900 overflow-x-hidden z-0">
+        <div className="scrollbar-container bg-transparent m-4 z-0">
+          <div className="container mx-auto">
+            <ImageSearch setSearchText={setSearchString} />
+            {loading ? (
+              <div className="second-container bg-gray-700 rounded-3xl shadow-sm mx-40 mb-20">
+                <h1 className="text-3xl text-center text-gray-300 p-24">
+                  Loading...
+                </h1>
+              </div>
+            ) : data.hits.length > 0 ? (
+              <div className="second-container bg-gray-700 rounded-3xl shadow-sm mx-40 mb-20">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-8 gap-y-11 px-16 py-16">
+                  {data.hits.map((item) => (
+                    <ImageCard item={item} />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="second-container bg-gray-700 rounded-3xl shadow-sm mx-40 mb-20">
+                <h1 className="text-3xl text-center text-gray-300 p-24">
+                  No images found :(
+                </h1>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

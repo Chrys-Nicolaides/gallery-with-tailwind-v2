@@ -5,6 +5,10 @@ module.exports = {
 
   darkMode: false, // or 'media' or 'class'
   theme: {
+    strokeWidth: {
+      3: "3",
+      4: "4",
+    },
     colors: {
       transparent: "transparent",
       gray: colors.gray,

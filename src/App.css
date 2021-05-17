@@ -13,6 +13,13 @@ body {
 .linear-gradient {
   background-image: linear-gradient(
     to right,
+    hsla(260, 29%, 54%, 0.4),
+    hsla(265, 95%, 92%, 0.9)
+  );
+}
+.dark .linear-gradient {
+  background-image: linear-gradient(
+    to right,
     hsla(259, 29%, 54%, 0.4),
     hsla(353, 35%, 47%, 0.9)
   );
@@ -23,8 +30,14 @@ body {
   background-color: transparent;
 }
 
-.scrollbar-container::-webkit-scrollbar-track {
+.dark .scrollbar-container::-webkit-scrollbar-track {
   background-color: #52525b;
+  margin-bottom: 80px;
+  margin-top: 230px;
+  border-radius: 0.5rem;
+}
+.scrollbar-container::-webkit-scrollbar-track {
+  background-color: white;
   margin-bottom: 80px;
   margin-top: 230px;
   border-radius: 0.5rem;

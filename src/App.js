@@ -2,14 +2,14 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import ImageCard from "./Components/ImageCard";
 import ImageSearch from "./Components/ImageSearch";
-import { IoSunny, IoMoon } from "react-icons/io";
+import { IoSunny, IoMoon } from "react-icons/io5";
 
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchString, setSearchString] = useState("");
 
-  const url = "https://pixabay.com/api/?key=17949228-be8f0aed3c84bfb102ac75e40";
+  const url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}`;
 
   const [darkTheme, setDarkTheme] = useState(
     localStorage.darkTheme === "true" ||
@@ -36,17 +36,17 @@ function App() {
 
     fetchData();
     return () => {};
-  }, [searchString]);
+  }, [searchString, url]);
 
   return (
     <div className={"App" + (darkTheme ? " dark" : "")}>
       <div className="bg-gradient-to-b from-purple-50 to-purple-300 dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900 overflow-x-hidden z-0">
-        <div className="flex justify-end mt-40 justify-items-end absolute">
+        <div className="flex justify-end mt-12 justify-items-end w-full absolute">
           <button
-            className="dark:text-gray-100 text-gray-800"
+            className=" flex items-center justify-center dark:text-gray-400 text-purple-400 w-12 h-12 rounded-md shadow-md outline-none focus:outline-none bg-purple-50 hover:bg-white dark:bg-gray-700 dark:hover:bg-gray-600 m-4"
             onClick={() => themeChange()}
           >
-            mode
+            {darkTheme ? <IoMoon size={"1.3em"} /> : <IoSunny size={"1.4em"} />}
           </button>
         </div>
         <div className="scrollbar-container bg-transparent m-4 z-0">
